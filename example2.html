@@ -5,13 +5,7 @@
     </head>
 <body>
 <div id ="root">
-   <ul>
-       <li v-for="name in names" v-text="name">
-
-       </li>
-   </ul>
-   <input id="input" type="text">
-   <button id="button">Add Name</button>
+   {{ foo }}
 </div>  
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 
@@ -19,19 +13,13 @@
         let data ={
         };
 
-        var app = new Vue({
+        new Vue({
             el:'#root',
             data:{
-                
-                names :['Joe','Mary','jane','jack']
+                foo:'bar'
 
             }
-        });
-        document.querySelector('#button').addEventListener('click',() =>{
-            let name =document.querySelector('#input');
-            app.names.push(name.value);
-            name.value = '';
-        });
+        })
     </script>
 </body>
 </html>
