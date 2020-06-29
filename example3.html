@@ -16,8 +16,7 @@
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 
     <script>
-        let data ={
-        };
+  
 
         var app = new Vue({
             el:'#root',
@@ -25,13 +24,20 @@
                 
                 names :['Joe','Mary','jane','jack']
 
+            },
+        
+            mounted(){
+                document.querySelector('#button').addEventListener('click',() =>{
+                    let name =document.querySelector('#input');
+                    app.names.push(name.value);
+                    name.value = '';
+                
+            
+
+                });
             }
         });
-        document.querySelector('#button').addEventListener('click',() =>{
-            let name =document.querySelector('#input');
-            app.names.push(name.value);
-            name.value = '';
-        });
+     
     </script>
 </body>
 </html>
